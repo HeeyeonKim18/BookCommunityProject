@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.mapper.ReplyMapper">
+	<insert id="insert">
+		insert into tbl_reply(rno, bno, reply, replyer)
+		values(seq_reply.nextval, #{bno}, #{reply}, #{replyer})
+	</insert>
+	
+	<select id="select" resultType="com.board.domain.ReplyVO">
+		select * from tbl_reply where rno = #{rno}
+	</select>
+	
+	<select id ="list" resultType="com.board.domain.ReplyVO">
+		<![CDATA[
+			select rno, bno, reply, replyer, replydate, updatedate
+			from (
+				select /*+INDEX(tbl_reply idx_reply)*/
+					rownum rn, rno, bno, reply, replyer, replydate, updatedate
+				from
+					tbl_reply
+				where bno = #{bno}
+					and rno > 0
+					and rownum <= #{cri.pageNum} * #{cri.amount}
+				)
+				where rn > (#{cri.pageNum} -1) * #{cri.amount}
+		]]>
+	</select>
+	
+	<update id="update">
+		update tbl_reply
+		set
+			reply = #{reply},
+			updateDate = sysdate
+		where 
+			rno = #{rno}
+	</update>
+	
+	<delete id ="delete">
+		delete from tbl_reply where rno = #{rno}
+	</delete>
+	
+	<select id="getCountByBno" resultType="int">
+		<![CDATA[
+			select count(rno) from tbl_reply where bno = #{bno}
+		]]>
+	</select>
+	
+	<delete id="deleteByReplyer">
+		delete from tbl_reply where replyer = #{userid}
+	</delete>
+	
+	<delete id="deleteBnoByReplyer">
+		delete from tbl_reply where bno in (select bno from tbl_board where writer = #{userid})
+	</delete>
+	
+	<select id="listAll" resultType="com.board.domain.ReplyVO">
+		<![CDATA[
+		select rno, bno, reply, replyer, replydate, updatedate
+		from (
+			select /*+INDEX_DESC(tbl_reply pk_reply)*/
+				rownum rn, rno, bno, reply, replyer, replydate, updatedate
+			from tbl_reply
+			where
+				rownum <= #{pageNum} * #{amount}
+		)
+		where
+			rn > (#{pageNum} - 1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="replyTotal" resultType="int">
+		select count(*) from tbl_reply
+		where rno > 0
+	</select>
+	
+</mapper>

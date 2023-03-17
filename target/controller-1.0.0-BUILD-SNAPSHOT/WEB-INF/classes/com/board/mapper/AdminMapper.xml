@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.board.mapper.AdminMapper">
+
+	<sql id="cri">
+		<trim prefix="(" suffix=") and">
+			userid like '%' || #{keyword,  jdbcType=VARCHAR} || '%'
+		</trim>
+	</sql>
+	<select id="selectMemberAll" resultType="com.board.domain.MemberVO">
+		<![CDATA[
+			select 
+				userid, userpw, username, userphone, usermail, userAddr1, 
+				useraddr2, useraddr3, auth, regdate, updatedate
+			from(
+    			select /*+INDEX_DESC(tbl_member pk_member)*/
+    	 		rownum rn, userid, userpw, username, userphone, usermail, 
+    	 		useraddr1, useraddr2, useraddr3, auth, regdate, updatedate
+     			from 
+     				tbl_member
+     			where 
+     	]]>
+     	<include refid="cri"></include>
+     	<![CDATA[
+     				rownum <= #{pageNum} * #{amount}
+     			)
+			where rn > (#{pageNum} -1) * #{amount}
+		]]>
+	</select>
+	
+	<select id="memberTotal" resultType="int">
+		select count(*) from tbl_member
+		where
+			userid like '%' || #{keyword,  jdbcType=VARCHAR} || '%'
+	</select>
+	
+	<select id="selectId" resultType="com.board.domain.MemberVO">
+		select * from tbl_member where userid = #{userid}
+	</select>
+	
+	<update id="update">
+		update tbl_member
+		set
+			userPhone = #{userPhone},
+			userAddr1 = #{userAddr1},
+			userAddr2 = #{userAddr2},
+			userAddr3 = #{userAddr3, jdbcType=VARCHAR},
+			updatedate = sysdate,
+			auth = #{auth}
+		where 
+			userid = #{userid}
+	</update>
+	
+	<delete id="delete">
+		delete from tbl_member 
+		where userid = #{userid}
+	</delete>
+	
+	<select id="memberBoard" resultType ="int">
+		select count(*) from tbl_board where writer = #{userid}
+	</select>
+</mapper>
