@@ -105,7 +105,7 @@
 								<div class="form-group">
 									<div class="col-sm-13 mb-sm-1">
 										<label><strong>내용</strong></label>
-										<textarea class="form-control" rows="3" id="contentIn"
+										<textarea class="form-control" rows="15" id="contentIn"
 										 name="content"><c:out value='${board.content}'/></textarea>
 									</div>
 								</div>

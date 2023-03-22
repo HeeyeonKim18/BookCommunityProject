@@ -85,7 +85,7 @@
 								<div class="form-group">
 									<div class="col-sm-13 mb-sm-1">
 										<label><strong>내용</strong></label>
-										<textarea class="form-control" rows="3" name="content" id="contentIn"></textarea>
+										<textarea class="form-control" rows="15" name="content" id="contentIn"></textarea>
 									</div>
 								</div>
 								<div class="form-group row">
