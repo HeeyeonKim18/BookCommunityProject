@@ -71,7 +71,6 @@
                                     </form>
                                     <hr>
                                     <div class="text-center">
-                                
                                         <a class="small" href="/member/forgotId"> Forgot Id </a> 
                                         <a class="small" href="/member/forgotPw"> / Password?</a>
                                     </div>

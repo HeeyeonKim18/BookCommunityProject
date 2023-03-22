@@ -159,11 +159,11 @@
 							</form>
 							<hr>
 							<div class="text-center">
-								<a class="small" href="forgot-password.html">Forgot
+								<a class="small" href="/member/forgotPw">Forgot
 									Password?</a>
 							</div>
 							<div class="text-center">
-								<a class="small" href="login.html">Already have an account?
+								<a class="small" href="/member/login">Already have an account?
 									Login!</a>
 							</div>
 						</div>
