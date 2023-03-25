@@ -45,5 +45,36 @@
 <br/>
 
 ## 개발 화면
+
+#### 1. Main Page
 ![메인화면](https://user-images.githubusercontent.com/107406119/227670806-b46cdb4c-674a-4533-8e94-43ae5f60044e.png)
+
+#### 2. Enroll Page
+![글작성](https://user-images.githubusercontent.com/107406119/227671165-5090f8c4-4618-4199-b3dc-99f36c2b883c.png)
+
+#### 3. look up Page 
+![글조회](https://user-images.githubusercontent.com/107406119/227671199-206f6832-27de-47b2-8427-60c72755f9c3.png)
+
+#### 4. Modify & Remove Page
+![글수정 및 삭제](https://user-images.githubusercontent.com/107406119/227671374-64eaa275-9936-4c6b-aa06-f3cf9611b1e2.png)
+
+#### 5. Login
+![로그인](https://user-images.githubusercontent.com/107406119/227671453-580f5025-daa4-421d-819d-edb07bc77d5b.png)
+
+#### 6. Sign up
+![회원가입](https://user-images.githubusercontent.com/107406119/227671479-0d5b4945-9be0-4e5e-b94a-660553aeebcb.png)
+
+#### 7. Find ID
+![아이디 찾기](https://user-images.githubusercontent.com/107406119/227671519-523500eb-73f0-4977-87ad-9d4c89c2b486.png)
+
+#### 8. Find Password
+![비밀번호 찾기](https://user-images.githubusercontent.com/107406119/227671512-a279c679-7c13-40ca-a1d1-2a6e9a69f56f.png)
+
+## 설계 
+
+#### 1. Package
+
+#### 2. DB
+![DB구조](https://user-images.githubusercontent.com/107406119/227671553-4db37d7e-890f-411f-bf3d-7d490ef9015b.png)
+
 
