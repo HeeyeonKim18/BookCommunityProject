@@ -6,6 +6,8 @@
 
 이 프로젝트는 책을 좋아하는 사람들이 하루 동안 자신이 읽은 다양한 분야의 책들을 공유하고 여러 정보를 나누기 위한 목적으로 만들었다. 
 
+프로젝트 관련 글: https://1.theapplemango.com/category/JAVA%20%26%20SPRING/BOOK%20COMMUITY%20PROJECT
+
 <br/>
 
 ## 프로젝트 주요 기능
@@ -70,6 +72,12 @@
 #### 8. Find Password
 ![비밀번호 찾기](https://user-images.githubusercontent.com/107406119/227671512-a279c679-7c13-40ca-a1d1-2a6e9a69f56f.png)
 
+#### 9. Member List(Admin)
+![스크린샷 2023-03-26 오전 7 00 32](https://user-images.githubusercontent.com/107406119/227747569-e45e1394-a558-47d4-8615-9117d73ecedd.png)
+
+#### 10. Reply List(Admin)
+![스크린샷 2023-03-26 오전 7 00 41](https://user-images.githubusercontent.com/107406119/227747574-29467084-d123-44ee-a524-d016ee84dbb7.png)
+
 ## 설계 
 
 #### 1. Package
@@ -78,5 +86,8 @@
 
 #### 2. DB
 ![DB구조](https://user-images.githubusercontent.com/107406119/227671553-4db37d7e-890f-411f-bf3d-7d490ef9015b.png)
+
+## Problem & Solution
+https://1.theapplemango.com/entry/%EA%B0%9C%EB%B0%9C-%EB%82%B4%EC%9A%A9
 
 
